@@ -1,0 +1,105 @@
+# =========================
+# Dependencies
+# =========================
+node_modules/
+*/node_modules/
+
+# =========================
+# Environment variables / secrets
+# =========================
+.env
+.env.*
+!.env.example
+
+# =========================
+# Logs
+# =========================
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# =========================
+# Build / production files
+# =========================
+dist/
+build/
+coverage/
+
+# =========================
+# OS generated files
+# =========================
+.DS_Store
+Thumbs.db
+
+# =========================
+# Editor / IDE files
+# =========================
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# =========================
+# Optional: local config files
+# =========================
+config/local.js
+config/local.json
+
+# =========================
+# Temporary files
+# =========================
+tmp/
+temp/
+*.tmp
+
+# =========================
+# Cache files
+# =========================
+.cache/
+.parcel-cache/
+
+# =========================
+# React / Vite specific
+# =========================
+frontend/.env
+frontend/.env.*
+frontend/dist/
+frontend/build/
+
+# =========================
+# Backend specific
+# =========================
+backend/.env
+backend/.env.*
+backend/dist/
+backend/build/
+
+# =========================
+# Uploads (if user files are stored locally)
+# =========================
+uploads/
+public/uploads/
+
+# =========================
+# Database files (if any local DB used)
+# =========================
+*.sqlite
+*.sqlite3
+*.db
+
+# =========================
+# Test reports
+# =========================
+test-results/
+reports/
+
+# =========================
+# Misc sensitive files
+# =========================
+*.pem
+*.key
+*.crt
+*.p12

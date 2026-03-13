@@ -1,0 +1,42 @@
+const express = require('express');
+const auth = require('../middleware/auth');
+const User = require('../models/User');
+
+const router = express.Router();
+
+// Get user profile
+router.get('/', auth, async (req, res) => {
+  try {
+    const user = await User.findById(req.user.id).select('-password');
+    res.json(user);
+  } catch (err) {
+    console.error(err.message);
+    res.status(500).send('Server error');
+  }
+});
+
+// Update user profile
+router.put('/', auth, async (req, res) => {
+  const { previousRole, experience, careerBreakDuration, desiredCareerPath, skills, certifications } = req.body;
+
+  try {
+    const user = await User.findById(req.user.id);
+
+    user.profile = {
+      previousRole,
+      experience,
+      careerBreakDuration,
+      desiredCareerPath,
+      skills,
+      certifications,
+    };
+
+    await user.save();
+    res.json(user);
+  } catch (err) {
+    console.error(err.message);
+    res.status(500).send('Server error');
+  }
+});
+
+module.exports = router;
